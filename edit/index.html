@@ -5,24 +5,30 @@
     <script type="module" src="edit.mjs"> </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Game</title>
+    <title>TMsj</title>
     <SassStyle />
 </head>
 
 <body class="edit">
-    <h1>Edit Script</h1>
+    <h1> <b>Edit Script</b>  <small>of TMsj</small></h1>
     <section id="edit">
         <Context src="./text.json" />
         <Island script=script />
-        <textarea id="textInput" placeholder="Enter or drag and drop your text here">{(script)}</textarea>
+        <div class="textarea-wrapper">
+            <textarea id="textInput" placeholder="Enter or drag and drop your text here">{(script)}</textarea>
+            <div class="textarea-background"> </div>
+        </div>
         <input type="file" id="fileInput" style="display: none;">
         <div>
             <p>Minutes:  {(Math.floor(script.split(/\s+/).length / 170))} - {(Math.ceil(script.split(/\s+/).length / 130))}</p>
         </div>
-        <div class="controls">
+    </section>
+    <section>
+
+        <nav>
             <button id="load">Load File</button>
-            <button id="start">Start</button>
-        </div>
+            <button id="start">Next</button>
+        </nav>
     </section>
 </body>
 
