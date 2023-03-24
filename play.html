@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="module" src="main.mjs"> </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Game</title>
+    <SassStyle root>
+</head>
+
+<body>
+    <div class="edit-container">
+        <div class="edit-area">
+            <textarea id="textInput" placeholder="Enter or drag and drop your text here">Once upon a time in a land far, far away, there was a kingdom. In this kingdom, there was a king who ruled with wisdom and kindness. His people were happy and prosperous.
+
+However, one day, a terrible storm ravaged the land. The people were scared, and they looked to the king for guidance. The king, being wise and just, called upon his advisors to help him find a solution.
+
+Together, they devised a plan to restore peace and prosperity to the kingdom. They rebuilt homes, planted new crops, and forged new alliances. Slowly but surely, the kingdom began to thrive once more.
+
+And so, the people lived happily ever after, grateful for the wisdom and leadership of their beloved king.</textarea>
+
+            <input type="file" id="fileInput" style="display: none;">
+        </div>
+        <div class="controls">
+            <button id="switchToPlayContainer">Start Playing</button>
+        </div>
+    </div>
+    <div class="play-container hidden">
+        <div class="play-area">
+            <code id="playText"> </p>
+        </div>
+        <div class="controls">
+            <div class="difficulty-container">
+                <label for="difficulty">Difficulty: </label>
+                <input type="range" id="difficulty" min="0" max="100" value="0">
+                <span id="difficultyValue">0%</span>
+            </div>
+            <div class="buttons-container">
+                <button id="clearButton">Clear</button>
+                <button id="refreshButton">Refresh</button>
+                <button id="nextButton">Next</button>
+                <button id="switchToEditContainer">Edit Text</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
