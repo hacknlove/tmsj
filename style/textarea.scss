@@ -1,0 +1,85 @@
+div.textarea-wrapper {
+  position: relative;
+  background: #eee;
+  box-shadow: 1px 1px 7px 1px #999d;
+
+  div.textarea-background {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        0deg,
+        #892c3b33 0%,
+        #892c3b33 5%,
+        #fff0 5%,
+        #fff0 100%
+      ),
+      linear-gradient(
+        90deg,
+        #372c8933 0%,
+        #372c8933 2px,
+        transparent 2px,
+        transparent 100%
+      );
+    background-size: 100% 1.5rem, 2px 100%;
+    background-repeat: repeat-y, no-repeat;
+    background-position: 0 0, 20px 0;
+    /* Position the vertical line 10px from the left */
+    pointer-events: none;
+  }
+
+  textarea {
+    position: absolute;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    background: none;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    font-family: serif;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea + .textarea-background + .textarea-show {
+    pointer-events: none;
+  }
+
+  textarea:focus + div.textarea-background {
+    background-image: linear-gradient(
+        0deg,
+        #892c3b55 0%,
+        #892c3b55 5%,
+        #fff0 5%,
+        #fff0 100%
+      ),
+      linear-gradient(
+        90deg,
+        #372c8999 0%,
+        #372c8999 2px,
+        transparent 2px,
+        transparent 100%
+      );
+  }
+  .textarea-show {
+    opacity: 0;
+    padding: 1rem 2rem 5rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    font-family: serif;
+    white-space: pre-wrap;
+    &.game {
+      opacity: 1;
+      padding: 0 2rem 5rem;
+    }
+    &.sample {
+      opacity: 0.3;
+      padding: 1rem 2rem 0;
+    }
+  }
+}

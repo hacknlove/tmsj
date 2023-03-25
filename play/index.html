@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="/play.mjs"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Game</title>
+    <SassStyle />
+  </head>
+
+  <body>
+    <h1>
+      <b>Learn Script</b> <a href="/"><small>of TMsj</small></a>
+    </h1>
+
+    <section id="play">
+      <Island paragraph="0" level="0" />
+      <h2>Paragraph {(paragraph)} - Level {(level)}</h2>
+      <div class="textarea-wrapper">
+        <div class="textarea-background"></div>
+        <div class="textarea-show sample" id="playgroundPre"></div>
+        <div class="textarea-show game" id="playground"></div>
+        <nav>
+          <a href="/edit"><button id="switchToEditContainer">Exit</button></a>
+          <div style="flex-grow: 1"></div>
+          <button id="refreshButton" class="{( level === 0 ? 'hidden' : '' )}">
+            Refresh
+          </button>
+          <button
+            id="backButton"
+            class="{( (paragraph===0&&level===0) ? 'hidden' : '' )}"
+          >
+            Back
+          </button>
+          <button id="nextButton">Next</button>
+        </nav>
+      </div>
+    </section>
+  </body>
+</html>

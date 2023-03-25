@@ -1,0 +1,41 @@
+button {
+  background-color: var(--secondary-color);
+  border: none;
+  color: var(--main-contrast);
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: 500;
+
+  &:hover {
+    background-color: var(--shadow-color);
+  }
+}
+
+nav {
+  margin-top: 5rem;
+  padding-top: 0;
+  border-top: 4px solid var(--main-color);
+  display: flex;
+  justify-content: end;
+  padding: 0 1rem;
+  height: 0;
+  box-shadow: 0 0 3px 1px #999d;
+  column-gap: 1rem;
+  button {
+    height: 35px;
+    position: relative;
+    margin: 0;
+    top: -18.5px;
+    box-shadow: 0 0 1px 2px var(--shadow-color);
+    &:hover {
+      box-shadow: 0 0 1px 2px var(--main-color);
+    }
+  }
+}

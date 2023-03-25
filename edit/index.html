@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <script type="module" src="edit.mjs"> </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script type="module" src="/edit.mjs"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TMsj</title>
     <SassStyle />
-</head>
+  </head>
 
-<body class="edit">
-    <h1> <b>Edit Script</b>  <small>of TMsj</small></h1>
+  <body>
+    <h1>
+      <b>Edit Script</b> <a href="/"><small>of TMsj</small></a>
+    </h1>
     <section id="edit">
-        <Context src="./text.json" />
-        <Island script=script />
-        <div class="textarea-wrapper">
-            <textarea id="textInput" placeholder="Enter or drag and drop your text here">{(script)}</textarea>
-            <div class="textarea-background"> </div>
-        </div>
-        <input type="file" id="fileInput" style="display: none;">
-        <div>
-            <p>Minutes:  {(Math.floor(script.split(/\s+/).length / 170))} - {(Math.ceil(script.split(/\s+/).length / 130))}</p>
-        </div>
-    </section>
-    <section>
-
+      <Island script="script" />
+      <div class="textarea-wrapper">
+        <textarea
+          id="textInput"
+          placeholder="Enter or drag and drop your text here"
+        >
+{(script)}</textarea
+        >
+        <div class="textarea-background"></div>
+        <div class="textarea-show">{(script)}</div>
         <nav>
-            <button id="load">Load File</button>
-            <button id="start">Next</button>
+          <button id="loadButton">Load File</button>
+          <button id="startButton">Next</button>
         </nav>
+      </div>
+      <input type="file" id="fileInput" style="display: none" />
+      <div>
+        <p>words: {{CountWords}}</p>
+        <p>Minutes: {{ComputeMinutes}}</p>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>

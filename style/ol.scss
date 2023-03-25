@@ -1,0 +1,11 @@
+ol {
+  li {
+    margin-bottom: 1rem;
+    &::marker {
+      color: var(--main-color);
+      font-size: 150%;
+      font-family: var(--titles-font);
+      font-weight: 700;
+    }
+  }
+}
