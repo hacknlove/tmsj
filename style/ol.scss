@@ -1,4 +1,7 @@
 ol {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
   li {
     margin-bottom: 1rem;
     &::marker {
