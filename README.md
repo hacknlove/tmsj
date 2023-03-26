@@ -15,10 +15,5 @@ This is just a simple, casual yet effective game designed to help speakers memor
 This project is open to contributions. If you have ideas on how to improve the webapp or want to contribute to the HTML framework, please feel free to open a pull request or create an issue.
 
 
-## Author
-
-Antonio Fernández Porrúa
-
-- [Your GitHub Profile](https://github.com/hacknlove)
-
+## Questions
 For any questions or feedback, please feel free to open an issue on GitHub.
