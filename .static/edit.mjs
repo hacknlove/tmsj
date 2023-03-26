@@ -1,11 +1,20 @@
 function start() {
+  window.location.href = "/play?paragraph=0&level=0";
+}
+
+let deferredSaveTimeout = null;
+
+function save() {
   localStorage.script = edit.state.script;
   const parragrahs = edit.state.script.split(/\n{2,}/);
   for (let i = 0; i < parragrahs.length; i++) {
     localStorage.setItem(`paragraph_${i}`, sanitize(parragrahs[i]));
   }
   localStorage.setItem("paragraph_count", parragrahs.length - 1);
-  window.location.href = "/play?paragraph=0&level=0";
+}
+function deferredSave() {
+  clearInterval(deferredSaveTimeout);
+  deferredSaveTimeout = setTimeout(save, 1000);
 }
 
 function sanitize(text) {
@@ -45,6 +54,11 @@ function MAIN() {
     if (localStorage.script) {
       edit.state.script = textInput.value = localStorage.script;
     }
+  });
+  edit.addEventListener("state", deferredSave);
+  clearButton.addEventListener("click", () => {
+    edit.state.script = "";
+    textInput.value = "";
   });
 }
 document.addEventListener("DOMContentLoaded", MAIN);

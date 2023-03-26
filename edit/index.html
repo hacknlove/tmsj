@@ -3,13 +3,19 @@
   <Head>
     <script type="module" src="/edit.mjs">  </script>
   </Head>
-
+  
   <body>
+    <GithubCorner />
     <h1>
       <b>Edit Script</b> <a href="/"><small>of TMsj</small></a>
     </h1>
+
     <section id="edit">
       <Island script="script" />
+      <div class="{( !script.trim() && 'hidden' )}">
+        <span><b>words:</b> {{CountWords}}</span>
+        <span><b>Minutes:</b> {{ComputeMinutes}}</span>
+      </div>
       <div class="textarea-wrapper">
         <textarea
           id="textInput"
@@ -20,15 +26,13 @@
         <div class="textarea-background"> </div>
         <div class="textarea-show">{(script)}</div>
         <nav>
-          <button id="loadButton">Load File</button>
+          <button id="loadButton">Load</button>
+          <button id="clearButton">Clear</button>
+          <div style="flex-grow: 1;"> </div>
           <button id="startButton">Next</button>
         </nav>
       </div>
       <input type="file" id="fileInput" style="display: none" />
-      <div>
-        <p>words: {{CountWords}}</p>
-        <p>Minutes: {{ComputeMinutes}}</p>
-      </div>
     </section>
   </body>
 </html>

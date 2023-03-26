@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", MAIN);
 
+const actions = {
+  ArrowLeft: "back",
+  ArrowRight: "next",
+  Backspace: "back",
+  s: "shuffle",
+  S: "shuffle",
+};
+
 function MAIN() {
   play.addEventListener("island-ready", updatePlayArea);
   play.addEventListener("island-ready", () => {
@@ -16,25 +24,14 @@ function MAIN() {
     }
     play.state.paragraph = play.state.paragraph + 1;
   });
-  backButton.addEventListener("click", () => {
-    if (play.state.paragraph == 0) {
-      play.state.paragraph = localStorage.paragraph_count;
-      play.state.level = Math.max(play.state.level - 1, 0);
-      return;
-    }
-    play.state.paragraph = play.state.paragraph - 1;
-  });
   document.addEventListener("keydown", (event) => {
-    if (event.key == "ArrowRight" || event.key == " " || event.key == "Enter") {
-      nextButton.click();
-    }
-    if (
-      event.key == "ArrowLeft" ||
-      event.key == "Backspace" ||
-      event.key == "Delete" ||
-      event.key == "Escape"
-    ) {
-      backButton.click();
+    switch (actions[event.key]) {
+      case "next":
+        nextButton.click();
+        break;
+      case "shuffle":
+        shuffleButton.click();
+        break;
     }
   });
 
@@ -52,7 +49,7 @@ function MAIN() {
     updatePlayArea();
   });
 
-  refreshButton.addEventListener("click", updatePlayArea);
+  shuffleButton.addEventListener("click", updatePlayArea);
 }
 
 function updatePlayArea() {
